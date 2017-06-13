@@ -22,9 +22,7 @@ int main()
 		cin >> seq[i];
 	
 	// using reverse iterator: for proper calculation
-	for (vector<int>::reverse_iterator rit = seq.rbegin() + 1; 
-		rit != seq.rend(); 
-		++rit) 
+	for (vector<int>::reverse_iterator rit = seq.rbegin() + 1; rit != seq.rend(); ++rit) 
 	{
 		*rit = powMod(*rit, *(rit-1), MOD);
 	}
@@ -46,8 +44,9 @@ int powMod(int root, int power, int mod)
 	if (power == 1)
 		return root;
 
-	// base condition: is power even?
 	ret = (powMod(root, power / 2, mod) % mod);
+	
+	// base condition: is power even?
 	if ((power & 1) == 0) {
 		return (ret * ret) % mod;
 	}
