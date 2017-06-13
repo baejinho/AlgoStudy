@@ -2,9 +2,9 @@
 #include <vector>
 using namespace std;
 
-#define MOD 1000000007
-
 typedef long long LL;
+
+const int MOD = 1000000007;
 
 int powMod(int root, int power, int mod);
 int _powMod(int root, int power, int mod);
