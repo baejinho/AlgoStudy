@@ -1,13 +1,13 @@
 import std.stdio;
 
-enum MOD = 1_000_000_007;
+const MOD = 1_000_000_007;
 
-int[] countsFromSizes(int[] sizes) {
+int[] countsFromSizes(in int[] sizes) {
   int[] result = [];
   int prev;
-  foreach (size; sizes) {
+  foreach (ref size; sizes) {
     if (result.length > 0 && size == prev)
-      result[result.length - 1]++;
+      result[$ - 1]++;
     else
       result ~= 1;
     prev = size;
@@ -15,9 +15,9 @@ int[] countsFromSizes(int[] sizes) {
   return result;
 }
 
-int hanoiTower(int[] counts) {
-  int result = 0;
-  foreach (count; counts) {
+int hanoiTower(in int[] counts) {
+  auto result = 0;
+  foreach (ref count; counts) {
     result = (2 * result) % MOD;
     result = (result + count) % MOD;
   }
@@ -25,30 +25,34 @@ int hanoiTower(int[] counts) {
 }
 
 void main() {
-  writeln(countsFromSizes([]));
-  writeln(countsFromSizes([1]));
-  writeln(countsFromSizes([1, 1]));
-  writeln(countsFromSizes([1, 2]));
-  writeln(countsFromSizes([1, 1, 1]));
-  writeln(countsFromSizes([1, 1, 2]));
-  writeln(countsFromSizes([1, 2, 2]));
-  writeln(countsFromSizes([1, 2, 3]));
+  writeln("hello world");
+}
 
-  writeln(hanoiTower([]));
-  writeln(hanoiTower([1]));
-  writeln(hanoiTower([2]));
-  writeln(hanoiTower([1, 1]));
-  writeln(hanoiTower([3]));
-  writeln(hanoiTower([2, 1]));
-  writeln(hanoiTower([1, 2]));
-  writeln(hanoiTower([1, 1, 1]));
+unittest {
+  assert(countsFromSizes([]) == []);
+  assert(countsFromSizes([1]) == [1]);
+  assert(countsFromSizes([1, 1]) == [2]);
+  assert(countsFromSizes([1, 2]) == [1, 1]);
+  assert(countsFromSizes([1, 1, 1]) == [3]);
+  assert(countsFromSizes([1, 1, 2]) == [2, 1]);
+  assert(countsFromSizes([1, 2, 2]) == [1, 2]);
+  assert(countsFromSizes([1, 2, 3]) == [1, 1, 1]);
 
-  writeln(hanoiTower(countsFromSizes([])));
-  writeln(hanoiTower(countsFromSizes([1])));
-  writeln(hanoiTower(countsFromSizes([1, 1])));
-  writeln(hanoiTower(countsFromSizes([1, 2])));
-  writeln(hanoiTower(countsFromSizes([1, 1, 1])));
-  writeln(hanoiTower(countsFromSizes([1, 1, 2])));
-  writeln(hanoiTower(countsFromSizes([1, 2, 2])));
-  writeln(hanoiTower(countsFromSizes([1, 2, 3])));
+  assert(hanoiTower([]) == 0);
+  assert(hanoiTower([1]) == 1);
+  assert(hanoiTower([2]) == 2);
+  assert(hanoiTower([1, 1]) == 3);
+  assert(hanoiTower([3]) == 3);
+  assert(hanoiTower([2, 1]) == 5);
+  assert(hanoiTower([1, 2]) == 4);
+  assert(hanoiTower([1, 1, 1]) == 7);
+
+  assert(hanoiTower(countsFromSizes([])) == 0);
+  assert(hanoiTower(countsFromSizes([1])) == 1);
+  assert(hanoiTower(countsFromSizes([1, 1])) == 2);
+  assert(hanoiTower(countsFromSizes([1, 2])) == 3);
+  assert(hanoiTower(countsFromSizes([1, 1, 1])) == 3);
+  assert(hanoiTower(countsFromSizes([1, 1, 2])) == 5);
+  assert(hanoiTower(countsFromSizes([1, 2, 2])) == 4);
+  assert(hanoiTower(countsFromSizes([1, 2, 3])) == 7);
 }
