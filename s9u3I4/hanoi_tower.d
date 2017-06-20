@@ -1,5 +1,3 @@
-import std.stdio;
-
 const MOD = 1_000_000_007;
 
 int[] countsFromSizes(in int[] sizes) {
@@ -25,7 +23,19 @@ int hanoiTower(in int[] counts) {
 }
 
 void main() {
-  writeln("hello world");
+  import std.stdio;
+
+  int totalCount;
+  readf!" %d"(totalCount);
+
+  int[] sizes = [];
+  for (auto i = 0; i < totalCount; i++) {
+    int size;
+    readf!" %d"(size);
+    sizes ~= size;
+  }
+
+  writeln(hanoiTower(countsFromSizes(sizes)));
 }
 
 unittest {
