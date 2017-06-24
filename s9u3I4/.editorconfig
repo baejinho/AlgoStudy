@@ -1,0 +1,15 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+# Set default charset
+[*.{md,html,xml,yml,json,py,js,php,pl,lua,rb,kt,java,cs,d,go,rs,cpp,c,scm}]
+charset = utf-8
+
+# 2 space indentation
+[*.{md,html,xml,yml,json,php,scm,rb}]
+indent_style = space
+indent_size = 2
+
+# 4 space indentation
+[*.{py,js,kt,java,cs,d,go,rs,cpp,c,pl,lua,kt}]
+indent_style = space
+indent_size = 4
