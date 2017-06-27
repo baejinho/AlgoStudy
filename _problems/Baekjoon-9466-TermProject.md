@@ -65,4 +65,14 @@ s<sub>r</sub>이 s<sub>1</sub>을 선택하는 경우에만 한 팀이 될 수 �
 
 ### 출처
 
+[ACM-ICPC](https://www.acmicpc.net/category/1)
+\> [Regionals](https://www.acmicpc.net/category/7)
+\> [Asia](https://www.acmicpc.net/category/42)
+\> [Korea](https://www.acmicpc.net/category/211)
+\> [Asia Regional - Daejeon 2013](https://www.acmicpc.net/category/detail/1169)
+L번
+
+- 데이터를 추가한 사람: `cubelover`
+- 문제를 번역한 사람: `plzrun`
+
 ### 링크
