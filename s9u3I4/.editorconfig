@@ -10,6 +10,6 @@ indent_style = space
 indent_size = 2
 
 # 4 space indentation
-[*.{py,js,kt,java,cs,d,go,rs,cpp,c,pl,lua,kt}]
+[*.{py,js,kt,java,cs,d,go,rs,cpp,c,pl,lua}]
 indent_style = space
 indent_size = 4
