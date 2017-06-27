@@ -76,3 +76,5 @@ L번
 - 문제를 번역한 사람: `plzrun`
 
 ### 링크
+
+- [ACM-ICPC Live Archive](https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=4522)
