@@ -5,7 +5,9 @@ public class Stick {
 
 
 	public static void main(String[] args) {
-
+		// REVIEW: `ex`는 루프 제어를 위해서만 쓰이고 있습니다.
+		// 지역 변수 `ex`를 없애고
+		// 대신 for (;;) 루프와 break 문을 쓰는게 어떨까요?
 		int ex = 0;
 		int stick = 64;
 		int stick_cnt=0;
